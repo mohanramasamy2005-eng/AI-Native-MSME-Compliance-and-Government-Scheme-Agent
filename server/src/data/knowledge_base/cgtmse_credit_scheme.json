@@ -1,0 +1,21 @@
+{
+  "docId": "gov_cgtmse_2026_v1",
+  "sourceName": "Credit Guarantee Fund Trust for Micro & Small Enterprises (CGTMSE), Ministry of MSME",
+  "officialUrl": "https://cgtmse.in",
+  "documentTitle": "CGTMSE Collateral-Free Credit Scheme Guidelines FY 2025-26",
+  "publishedDate": "2026-01-15",
+  "lastVerifiedDate": "2026-08-20",
+  "category": "Schemes",
+  "chunks": [
+    {
+      "chunkId": "cgtmse_chunk_1",
+      "text": "CGTMSE provides collateral-free credit facilities up to ₹5 Crore for new and existing Micro and Small Enterprises in manufacturing and service sectors. The guarantee coverage is up to 85% for micro enterprises.",
+      "keywords": ["cgtmse", "credit", "loan", "collateral-free", "scheme", "bank", "manufacturing"]
+    },
+    {
+      "chunkId": "cgtmse_chunk_2",
+      "text": "Eligibility factors require a valid Udyam Registration Certificate, clean credit history, and minimum 2 years of operational manufacturing history for existing units seeking credit expansion.",
+      "keywords": ["udyam", "eligibility", "cibil", "manufacturing", "expansion"]
+    }
+  ]
+}

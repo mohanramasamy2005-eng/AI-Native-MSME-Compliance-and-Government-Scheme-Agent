@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MSME AI - Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "surface-variant": "#e0e3e5",
+                        "secondary-fixed": "#dbe1ff",
+                        "error": "#ba1a1a",
+                        "background": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary-fixed": "#d8e2ff",
+                        "outline": "#75777f",
+                        "secondary-container": "#316bf3",
+                        "secondary": "#0051d5",
+                        "on-surface-variant": "#44474e",
+                        "primary-container": "#1a2b4b",
+                        "outline-variant": "#c5c6cf",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#364768",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f2f4f6",
+                        "primary-fixed-dim": "#b6c6ef",
+                        "on-primary-container": "#8293b8",
+                        "on-primary": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "surface-bright": "#f7f9fb",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "surface-container": "#eceef0",
+                        "surface-tint": "#4e5e81",
+                        "inverse-primary": "#b6c6ef",
+                        "on-primary-fixed": "#081b3a",
+                        "on-secondary-container": "#fefcff",
+                        "tertiary": "#001c10",
+                        "on-surface": "#191c1e",
+                        "on-secondary-fixed": "#00174b",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "tertiary-container": "#003320",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "inverse-on-surface": "#eff1f3",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "on-tertiary-container": "#00a774",
+                        "on-tertiary-fixed": "#002113",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "primary": "#031635"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin": "24px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "code-md": ["jetbrainsMono"],
+                        "title-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "title-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "code-md": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        .input-field {
+            @apply w-full bg-surface-container-lowest border border-surface-variant rounded-lg px-md py-3 text-body-lg font-body-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all;
+        }
+        .input-label {
+            @apply block text-label-md font-label-md text-on-surface-variant mb-xs;
+        }
+    </style>
+</head>
+<body class="bg-background h-full text-on-background flex flex-col md:flex-row antialiased">
+<!-- Suppressed navigation shell for onboarding (Transactional intent) -->
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col min-h-screen">
+<!-- Minimal Top Header for Onboarding -->
+<header class="w-full flex items-center justify-between p-md md:px-xl border-b border-surface-variant bg-surface-container-lowest shrink-0">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-2xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-headline-md text-headline-md text-primary tracking-tight">MSME AI</span>
+</div>
+<div>
+<button class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">help</span> Help
+                </button>
+</div>
+</header>
+<div class="flex-1 flex flex-col lg:flex-row w-full overflow-y-auto">
+<!-- Left Side: Form Area -->
+<div class="w-full lg:w-1/2 flex flex-col p-md md:p-xl lg:px-24 xl:px-32 justify-center py-12 lg:py-0">
+<!-- Progress Indicator -->
+<div class="w-full max-w-lg mb-xl">
+<div class="flex items-center justify-between relative mb-sm">
+<!-- Connecting Line -->
+<div class="absolute top-1/2 left-0 w-full h-[2px] bg-surface-variant -z-10 -translate-y-1/2"></div>
+<!-- Active Line -->
+<div class="absolute top-1/2 left-0 w-[25%] h-[2px] bg-secondary -z-10 -translate-y-1/2"></div>
+<!-- Step 1 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-md text-label-md ring-4 ring-background">1</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-md text-label-md ring-4 ring-background">2</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-md text-label-md ring-4 ring-background">3</div>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-md text-label-md ring-4 ring-background">4</div>
+</div>
+</div>
+<div class="flex justify-between w-full">
+<span class="font-label-md text-label-md text-primary w-1/4 text-center">Business Details</span>
+<span class="font-label-md text-label-md text-on-surface-variant w-1/4 text-center opacity-0 md:opacity-100">Financials</span>
+<span class="font-label-md text-label-md text-on-surface-variant w-1/4 text-center opacity-0 md:opacity-100">Compliance</span>
+<span class="font-label-md text-label-md text-on-surface-variant w-1/4 text-center opacity-0 md:opacity-100">Review</span>
+</div>
+</div>
+<!-- Header -->
+<div class="mb-xl max-w-lg">
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-sm">Let’s understand your business</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Tell us about your business once. Our AI will identify what may apply to you.</p>
+</div>
+<!-- Form -->
+<form class="w-full max-w-lg flex flex-col gap-lg">
+<div>
+<label class="input-label" for="businessName">Business Name</label>
+<input class="input-field" id="businessName" placeholder="Enter registered business name" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div>
+<label class="input-label" for="businessType">Business Type</label>
+<div class="relative">
+<select class="input-field appearance-none pr-10" id="businessType">
+<option disabled="" selected="" value="">Select Type</option>
+<option value="proprietorship">Proprietorship</option>
+<option value="partnership">Partnership</option>
+<option value="llp">LLP</option>
+<option value="pvt_ltd">Private Limited</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<div>
+<label class="input-label" for="yearEstablished">Year Established</label>
+<input class="input-field" id="yearEstablished" max="2025" min="1800" placeholder="YYYY" type="number"/>
+</div>
+</div>
+<div>
+<label class="input-label" for="industry">Industry / Sector</label>
+<div class="relative">
+<select class="input-field appearance-none pr-10" id="industry">
+<option disabled="" selected="" value="">Select Industry</option>
+<option value="manufacturing">Manufacturing</option>
+<option value="services">Services</option>
+<option value="retail">Retail / Trade</option>
+<option value="agriculture">Agriculture &amp; Allied</option>
+<option value="technology">Technology / IT</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<div>
+<label class="input-label" for="primaryActivity">Primary Activity</label>
+<textarea class="input-field resize-none" id="primaryActivity" placeholder="Briefly describe what your business does..." rows="3"></textarea>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div>
+<label class="input-label" for="state">State</label>
+<div class="relative">
+<select class="input-field appearance-none pr-10" id="state">
+<option disabled="" selected="" value="">Select State</option>
+<option value="mh">Maharashtra</option>
+<option value="gj">Gujarat</option>
+<option value="dl">Delhi</option>
+<option value="ka">Karnataka</option>
+<option value="tn">Tamil Nadu</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<div>
+<label class="input-label" for="district">District</label>
+<input class="input-field" id="district" placeholder="Enter District" type="text"/>
+</div>
+</div>
+<div class="mt-xl pt-lg border-t border-surface-variant flex items-center justify-between">
+<button class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface px-lg py-2 transition-colors" type="button">
+                            Save for later
+                        </button>
+<button class="bg-secondary text-on-secondary font-title-md text-title-md px-xl py-3 rounded-lg hover:bg-primary transition-colors flex items-center gap-2 shadow-[0_4px_6px_-1px_rgb(0,0,0,0.05),0_2px_4px_-2px_rgb(0,0,0,0.05)]" type="button">
+                            Continue <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Right Side: Ambient/AI context canvas (Hidden on mobile) -->
+<div class="hidden lg:flex w-1/2 bg-surface-container-low relative items-center justify-center overflow-hidden border-l border-surface-variant">
+<!-- Abstract AI Graphic / Pattern -->
+<div class="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,theme(colors.primary-fixed)_0%,transparent_70%)]"></div>
+<div class="relative z-10 max-w-md p-xl">
+<div class="bg-surface-container-lowest/80 backdrop-blur-md rounded-xl p-lg border border-surface-variant shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+<div class="flex items-start gap-md mb-md">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface mb-xs">Why we need this</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                    Your location and industry type help our AI engine immediately filter thousands of complex government schemes, subsidies, and compliance deadlines down to only what is strictly relevant to you.
+                                </p>
+</div>
+</div>
+<div class="h-[1px] w-full bg-surface-variant my-sm"></div>
+<div class="flex items-center gap-sm text-label-md font-label-md text-primary">
+<span class="material-symbols-outlined text-sm">lock</span>
+                            Your data is securely encrypted.
+                        </div>
+</div>
+</div>
+<!-- Decorative elements -->
+<div class="absolute top-24 right-24 w-64 h-64 border border-primary-fixed-dim/30 rounded-full"></div>
+<div class="absolute bottom-24 left-24 w-96 h-96 border border-primary-fixed-dim/20 rounded-full"></div>
+</div>
+</div>
+</main>
+</body></html>

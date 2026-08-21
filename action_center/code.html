@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Your Action Plan - MSME AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "surface-variant": "#e0e3e5",
+                        "secondary-fixed": "#dbe1ff",
+                        "error": "#ba1a1a",
+                        "background": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary-fixed": "#d8e2ff",
+                        "outline": "#75777f",
+                        "secondary-container": "#316bf3",
+                        "secondary": "#0051d5",
+                        "on-surface-variant": "#44474e",
+                        "primary-container": "#1a2b4b",
+                        "outline-variant": "#c5c6cf",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#364768",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f2f4f6",
+                        "primary-fixed-dim": "#b6c6ef",
+                        "on-primary-container": "#8293b8",
+                        "on-primary": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "surface-bright": "#f7f9fb",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "surface-container": "#eceef0",
+                        "surface-tint": "#4e5e81",
+                        "inverse-primary": "#b6c6ef",
+                        "on-primary-fixed": "#081b3a",
+                        "on-secondary-container": "#fefcff",
+                        "tertiary": "#001c10",
+                        "on-surface": "#191c1e",
+                        "on-secondary-fixed": "#00174b",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "tertiary-container": "#003320",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "inverse-on-surface": "#eff1f3",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "on-tertiary-container": "#00a774",
+                        "on-tertiary-fixed": "#002113",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "primary": "#031635"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin": "24px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "code-md": ["jetbrainsMono"],
+                        "title-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "title-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "code-md": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-surface border-b border-outline-variant flex justify-between items-center h-16 px-lg ml-64">
+<div class="flex items-center gap-sm hidden">
+<span class="font-headline-md text-headline-md font-bold text-primary">MSME AI</span>
+</div>
+<div class="flex-1 flex items-center max-w-md">
+<div class="relative w-full focus-within:ring-2 focus-within:ring-secondary-container rounded-lg">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg pl-10 pr-4 py-2 text-on-surface focus:outline-none focus:border-secondary transition-colors font-body-md text-body-md" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</button>
+<img alt="User Profile Avatar" class="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="A small circular user profile avatar showing a modern, professional headshot of a business manager. The avatar is set against a clean, minimal white background, emphasizing a corporate B2B style with high-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLda6dlgSKmUqyQS6IIgJEwqgbbsoc6ZlvAmfzXIZ5_t2Lzpo7EBDnLpyQ0ES2mmQOkv3uhzlQ0NaEIOYBS-au32fURQjYhM6rB4Hlnk-bDtkaWs6kx4ohWKb7N9tnT2fjN7zdeAi8wtjlk2Eotcljrknww6sIp6-NSiivdzMU7GcY7lsEnBBmKXnIKisJ9XI52KUonplqOMDTCy47TlRcVbuCTjMJ1uRKj4BSqnWqh-OwTFzfPggw"/>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-lowest border-r border-outline-variant flex flex-col p-md z-50">
+<div class="mb-lg px-sm">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-on-primary font-bold">M</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary leading-tight">MSME AI</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Intelligent OS</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto flex flex-col gap-sm">
+<a class="flex items-center gap-md px-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-md px-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="business_center">business_center</span>
+                My Business
+            </a>
+<a class="flex items-center gap-md px-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+                AI Assistant
+            </a>
+<a class="flex items-center gap-md px-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+                Compliance
+            </a>
+<a class="flex items-center gap-md px-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+                Schemes &amp; Subsidies
+            </a>
+<a class="flex items-center gap-md px-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+                Tenders
+            </a>
+<a class="flex items-center gap-md px-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+                Certifications
+            </a>
+<a class="flex items-center gap-md px-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+                Documents
+            </a>
+<a class="flex items-center gap-md px-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+                Deadlines
+            </a>
+<!-- Active State -->
+<a class="flex items-center gap-md px-md py-2 rounded-lg bg-secondary-container text-on-secondary-container font-bold opacity-90 transition-all duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="bolt" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                Action Center
+            </a>
+<a class="flex items-center gap-md px-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md mt-auto" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                Help
+            </a>
+<a class="flex items-center gap-md px-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-md px-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+                Profile
+            </a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 p-container-margin min-h-screen">
+<header class="mb-xl">
+<h2 class="font-display-lg text-display-lg text-primary mb-xs">Your Action Plan</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Intelligently prioritized tasks for your business operations.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Today Column -->
+<section class="flex flex-col gap-md">
+<h3 class="font-title-lg text-title-lg text-on-surface border-b border-outline-variant pb-xs">Today</h3>
+<!-- Priority Red Task -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="absolute top-0 left-0 w-1 h-full bg-error"></div>
+<div class="flex justify-between items-start mb-sm pl-2">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-error block"></span>
+<span class="font-label-md text-label-md text-error font-bold uppercase tracking-wider">Critical</span>
+</div>
+<span class="material-symbols-outlined text-outline text-sm">more_horiz</span>
+</div>
+<h4 class="font-title-md text-title-md text-primary mb-xs pl-2">Review Factory Licence Renewal</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md pl-2 flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm text-error">info</span>
+                        Expiring in 19 days
+                    </p>
+<div class="flex gap-sm pl-2">
+<button class="bg-secondary text-on-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm">
+                            Start Action
+                        </button>
+</div>
+</div>
+</section>
+<!-- This Week Column -->
+<section class="flex flex-col gap-md">
+<h3 class="font-title-lg text-title-lg text-on-surface border-b border-outline-variant pb-xs">This Week</h3>
+<!-- Priority Yellow Task -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="absolute top-0 left-0 w-1 h-full bg-yellow-500"></div>
+<div class="flex justify-between items-start mb-sm pl-2">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-yellow-500 block"></span>
+<span class="font-label-md text-label-md text-yellow-700 font-bold uppercase tracking-wider">Warning</span>
+</div>
+<span class="material-symbols-outlined text-outline text-sm">more_horiz</span>
+</div>
+<h4 class="font-title-md text-title-md text-primary mb-xs pl-2">Update Employee Count</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md pl-2 flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm text-yellow-600">warning</span>
+                        Inconsistency in Udyam Doc
+                    </p>
+<div class="flex gap-sm pl-2">
+<button class="bg-surface-container-lowest border border-outline-variant text-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-surface-container-low transition-colors shadow-sm">
+                            Start Action
+                        </button>
+</div>
+</div>
+</section>
+<!-- Upcoming Column -->
+<section class="flex flex-col gap-md">
+<h3 class="font-title-lg text-title-lg text-on-surface border-b border-outline-variant pb-xs">Upcoming</h3>
+<!-- Priority Blue Task -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
+<div class="flex justify-between items-start mb-sm pl-2">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-secondary block"></span>
+<span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">Opportunity</span>
+</div>
+<span class="material-symbols-outlined text-outline text-sm">more_horiz</span>
+</div>
+<h4 class="font-title-md text-title-md text-primary mb-xs pl-2">Apply for ZED Certification</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md pl-2 flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm text-secondary">auto_awesome</span>
+                        Highly relevant scheme match
+                    </p>
+<div class="flex gap-sm pl-2">
+<button class="bg-surface-container-lowest border border-outline-variant text-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-surface-container-low transition-colors shadow-sm">
+                            Start Action
+                        </button>
+<button class="text-on-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md hover:text-primary transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">done</span> Mark Complete
+                        </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

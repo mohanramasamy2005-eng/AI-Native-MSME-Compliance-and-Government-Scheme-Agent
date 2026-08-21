@@ -1,0 +1,16 @@
+{
+  "docId": "gov_zed_subsidy_2026_v1",
+  "sourceName": "Quality Council of India (QCI) & Ministry of MSME",
+  "officialUrl": "https://zed.msme.gov.in",
+  "documentTitle": "MSME Sustainable (ZED) Certification & Capital Subsidy Directive",
+  "publishedDate": "2026-02-01",
+  "lastVerifiedDate": "2026-08-20",
+  "category": "Subsidies",
+  "chunks": [
+    {
+      "chunkId": "zed_chunk_1",
+      "text": "ZED Certification Scheme offers 80% subsidy for Micro Enterprises and 60% for Small Enterprises on certification costs and capital testing equipment up to ₹5 Lakhs.",
+      "keywords": ["zed", "subsidy", "quality", "certification", "zero defect", "testing"]
+    }
+  ]
+}
