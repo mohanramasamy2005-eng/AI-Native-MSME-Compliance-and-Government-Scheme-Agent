@@ -1,99 +1,147 @@
-# MSME AI Operating System
+# 🚀 MSME AI
 
-An AI-assisted operating system for Micro, Small and Medium Enterprises (MSMEs). The application brings business profile management, compliance tracking, government schemes, tenders, certifications, deadlines, action items, document intelligence, and an AI assistant into one workspace.
+**AI-powered compliance, government-scheme, opportunity, and document intelligence platform for MSMEs.**
 
-## Features
+[![React](https://img.shields.io/badge/React-18-149eca?logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Mongoose-47a248?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![RAG](https://img.shields.io/badge/AI-RAG%20retrieval-f59e0b)](server/src/services/ragRetrievalService.ts)
 
-- Executive dashboard with business health and priority recommendations
-- MSME business profile and onboarding
-- Compliance monitoring and due-date tracking
-- Government schemes, subsidies, and tender discovery
-- Certification and deadline management
-- Action Center for recommended follow-up work
-- AI assistant with structured recommendations
-- RAG-powered government knowledge retrieval and citations
-- AI Document Intelligence for PDF and image uploads
-- PDF text extraction and image OCR
-- Document type and field detection for identifiers and dates
-- Profile comparison with mismatch and missing-information reports
-- Automatic document renewal deadline and action creation
+## 📌 Overview
 
-> Document Intelligence supports review and data extraction. It does not authenticate or verify the legal validity of Udyam, GST, PAN, or other government certificates.
+MSME AI is a workspace for business owners who need to keep track of compliance obligations, government schemes, tenders, certifications, documents, deadlines, and follow-up work.
 
-## Technology
+Users maintain a business profile once. The platform then presents business context alongside seeded records and a contextual assistant that returns structured recommendations. Its knowledge-retrieval layer searches an ingested collection of government-focused documents and returns source metadata and matched text with assistant responses.
 
-### Frontend
+The project is intended for MSME owners and teams that want a single place to review relevant information and turn it into actions. It is an assistance and review tool, not a government website, a certificate-verification portal, or a legal certification system.
 
-- React 18
-- TypeScript
-- Vite
-- React Router
-- Tailwind CSS
-- Lucide React
+## 🎯 Problem
 
-### Backend
+MSMEs often have to manage registrations, licences, tax and other compliance requirements, schemes and subsidies, tenders, certifications, renewal dates, and supporting business documents. The relevant information is spread across different portals, notices, and files, making it difficult to identify what matters now and what needs attention next.
 
-- Node.js
-- Express
-- TypeScript
-- Mongoose
-- Multer for multipart file uploads
-- `pdf-parse` for PDF text extraction
-- `tesseract.js` for image OCR
-- JWT authentication middleware
+## 💡 Solution
 
-### Database
+```text
+Business information
+	↓
+MSME business profile
+	↓
+Contextual AI analysis + knowledge retrieval
+	↓
+Relevant compliance, schemes, tenders, and certifications
+	↓
+Recommended actions
+	↓
+Deadlines and progress tracking
+```
 
-- MongoDB
-- Default database: `msme_ai_db`
-- Default connection: `mongodb://127.0.0.1:27017/msme_ai_db`
+The assistant uses the stored business profile and application records to produce structured, profile-aware recommendations. The UI brings those recommendations together with operational pages for review and follow-up.
 
-## Project Structure
+## ✨ Key Features
+
+| Area                          | What is implemented                                                                                                                                                                                    |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 🤖 AI Assistant               | Returns profile-aware recommendations, relevance indicators, eligibility factors, suggested actions, deadlines, and source metadata for scheme, compliance, priority, and general queries.             |
+| 📋 Compliance Intelligence    | Lists compliance records with categories, authorities, periodicity, status, due dates, descriptions, and potential penalties.                                                                          |
+| 💰 Schemes & Subsidies        | Displays scheme records with ministry, funding, eligibility criteria, benefits, match scores, deadlines, and official URLs.                                                                            |
+| 🏛️ Tender Opportunities       | Displays tender notice numbers, issuing organisations, categories, estimated values, locations, submission deadlines, match scores, and status.                                                        |
+| 🏆 Certification Intelligence | Tracks certification name, issuing body, category, certificate number, validity dates, and renewal status.                                                                                             |
+| 📄 AI Document Intelligence   | Accepts PDF and image uploads, extracts PDF text or English OCR text, detects document types, registration identifiers, company names, dates, and expiry dates, then stores a review report.           |
+| 🔎 Document Review            | Compares detected company name, GSTIN, and PAN values with the business profile and reports matches, mismatches, missing information, potential issues, confidence scores, and review recommendations. |
+| 📚 RAG Knowledge Retrieval    | Ingests JSON knowledge-base documents into MongoDB and retrieves up to three matching chunks using token and keyword relevance scoring, with citations and official source metadata.                   |
+| ⏰ Deadline Tracking          | Lists deadlines ordered by remaining time. Document expiry analysis can create or update a document-renewal deadline.                                                                                  |
+| ✅ Action Center              | Stores follow-up items and lets users update action status. Document expiry analysis can create or update a pending document-fix action.                                                               |
+| 📊 Executive Dashboard        | Brings business health, priority recommendations, deadlines, documents, and other workspace data into one view.                                                                                        |
+
+> ⚠️ **Important:** Document Intelligence supports extraction and review. It does not authenticate documents or certify the legal validity of Udyam, GST, PAN, or other certificates. Extracted dates and fields should be checked against the original document and issuing authority.
+
+## 🧠 How the AI Works
+
+```mermaid
+flowchart LR
+    A[MSME Business Profile] --> B[Context Builder]
+    B --> C[Contextual AI Provider]
+    C --> D[Knowledge-Base Retrieval]
+    D --> E[Matched Chunks and Citations]
+    E --> F[Structured Recommendations]
+    F --> G[Actions and Deadlines]
+```
+
+The current assistant is implemented as a contextual provider with query-specific recommendation paths. Before returning a response, it searches the MongoDB knowledge base for relevant chunks. The current retrieval implementation uses token and keyword matching; it is not an external LLM or a vector database integration.
+
+Document analysis follows a separate workflow:
+
+```text
+Upload PDF/image → Extract text or OCR → Detect fields and dates
+→ Compare with business profile → Retrieve renewal guidance
+→ Save review → Create renewal deadline/action when an expiry date is found
+```
+
+## 🏗️ Architecture
+
+```text
+React + Vite frontend
+	│  /api proxy
+	▼
+Express + TypeScript backend
+	│
+	├── REST controllers and routes
+	├── Contextual assistant and RAG services
+	├── PDF parsing and Tesseract.js OCR
+	└── Mongoose models
+		│
+		▼
+	     MongoDB
+```
+
+### Technology Stack
+
+- **Frontend:** React 18, TypeScript, Vite, React Router, Tailwind CSS, Lucide React
+- **Backend:** Node.js, Express, TypeScript, JWT authentication middleware, Multer uploads
+- **Data:** MongoDB with Mongoose
+- **Document processing:** `pdf-parse` for PDFs and `tesseract.js` with the bundled English trained data for images
+- **AI support:** Contextual recommendation provider and MongoDB-backed government knowledge retrieval
+
+## 📁 Project Structure
 
 ```text
 src/
-	components/       Reusable UI components
-	pages/            Application pages
-	services/         Frontend API client and mock fallback data
-	types/            Shared frontend TypeScript types
-	App.tsx           Routes and application shell
+├── components/       Reusable UI components
+├── pages/            Application pages
+├── services/         Frontend API client and mock fallback data
+├── types/            Shared frontend TypeScript types
+└── App.tsx           Routes and application shell
 
 server/src/
-	config/           Database configuration
-	controllers/      Request handlers
-	data/             RAG knowledge-base data
-	middleware/       Authentication and error handling
-	models/           Mongoose models
-	routes/           Express routes
-	services/         Seeding, RAG ingestion, and retrieval services
-	index.ts          Backend entry point
+├── config/           Database configuration
+├── controllers/      Request handlers
+├── data/             JSON knowledge-base documents
+├── middleware/       Authentication and error handling
+├── models/           Mongoose models
+├── routes/           Express routes
+├── services/         Seeding, AI context, RAG, and document services
+└── index.ts          Backend entry point
 ```
 
-## Requirements
+## ⚙️ Requirements
 
 - Node.js 18 or newer
 - npm
-- MongoDB running locally, or a reachable MongoDB connection string
+- MongoDB running locally or a reachable MongoDB instance
 
-## Installation
+## 🚀 Getting Started
 
-Install frontend dependencies:
+Install dependencies:
 
 ```bash
 npm install
-```
-
-Install backend dependencies:
-
-```bash
 cd server
 npm install
 cd ..
 ```
 
-## Configuration
-
-Create `server/.env` when custom configuration is required:
+Create `server/.env` when custom configuration is needed:
 
 ```env
 PORT=5000
@@ -101,26 +149,22 @@ MONGO_URI=mongodb://127.0.0.1:27017/msme_ai_db
 JWT_SECRET=replace_with_a_long_random_secret
 ```
 
-The backend has defaults for local development, so `.env` is optional for a local MongoDB setup.
+The backend has local-development defaults, so `.env` is optional when using the default MongoDB connection.
 
-## Run Locally
-
-Start MongoDB first, then run the backend from a terminal:
+Start the backend in one terminal:
 
 ```bash
 cd server
 npm run server
 ```
 
-The backend runs at `http://localhost:5000`.
-
-In a second terminal, run the frontend:
+Start the frontend in a second terminal:
 
 ```bash
 npm run dev
 ```
 
-The frontend runs at `http://localhost:3000` and proxies `/api` requests to the backend.
+The backend listens on `http://localhost:5000`. Vite serves the frontend on `http://localhost:3000` and proxies `/api` requests to the backend.
 
 For backend development with automatic restart:
 
@@ -129,12 +173,37 @@ cd server
 npm run dev
 ```
 
-## Verification
+## 🔌 API Surface
 
-Backend health check:
+| Area               | Endpoint prefix       |
+| ------------------ | --------------------- |
+| Health check       | `/api/health`         |
+| Authentication     | `/api/auth`           |
+| Business profile   | `/api/business`       |
+| Compliance         | `/api/compliance`     |
+| Schemes            | `/api/schemes`        |
+| Tenders            | `/api/tenders`        |
+| Certifications     | `/api/certifications` |
+| Documents          | `/api/documents`      |
+| Deadlines          | `/api/deadlines`      |
+| Actions            | `/api/actions`        |
+| AI assistant       | `/api/assistant`      |
+| RAG knowledge base | `/api/rag`            |
+
+Document upload uses multipart form data:
 
 ```text
-GET http://localhost:5000/api/health
+POST /api/documents/upload
+Content-Type: multipart/form-data
+Field: file
+```
+
+## 🧪 Verification
+
+Check backend health after starting the server:
+
+```bash
+curl http://localhost:5000/api/health
 ```
 
 Build the frontend:
@@ -150,47 +219,10 @@ cd server
 npm run build
 ```
 
-## Document Intelligence Workflow
+## ℹ️ Current Development Notes
 
-1. Open **Documents** in the frontend.
-2. Upload a PDF, PNG, JPG, or JPEG file.
-3. The backend extracts PDF text or runs OCR for images.
-4. The analyzer detects the document type, identifiers, company data, and dates.
-5. Extracted values are compared with the stored MSME business profile.
-6. The review report separates matches, mismatches, missing information, potential issues, and recommendations.
-7. Relevant government guidance is retrieved from the RAG knowledge base.
-8. A detected future expiry date creates or updates a document-renewal deadline.
-9. The same expiry creates or updates a pending Document Fix action.
-10. The dashboard displays a renewal alert linking to the Action Center.
-
-Upload endpoint:
-
-```text
-POST /api/documents/upload
-Content-Type: multipart/form-data
-Field: file
-```
-
-## API Areas
-
-| Area               | Endpoint prefix       |
-| ------------------ | --------------------- |
-| Authentication     | `/api/auth`           |
-| Business profile   | `/api/business`       |
-| Compliance         | `/api/compliance`     |
-| Schemes            | `/api/schemes`        |
-| Tenders            | `/api/tenders`        |
-| Certifications     | `/api/certifications` |
-| Documents          | `/api/documents`      |
-| Deadlines          | `/api/deadlines`      |
-| Actions            | `/api/actions`        |
-| AI assistant       | `/api/assistant`      |
-| RAG knowledge base | `/api/rag`            |
-
-## Notes
-
-- The authentication middleware permits requests without a token for local prototype usage.
-- MongoDB seed data is loaded when the database is empty.
-- RAG ingestion runs during backend database connection when the knowledge-base directory is available.
-- Uploaded files are processed temporarily and removed after analysis.
-- The application may return frontend mock data when an API request is unavailable.
+- The backend seeds initial business, compliance, scheme, tender, certification, document, deadline, and action data when the database is empty.
+- RAG ingestion runs during database connection when the knowledge-base directory is available.
+- The frontend API client falls back to local mock data when an API request is unavailable.
+- Authentication headers are supported by the frontend and routes use the authentication middleware; the middleware permits requests without a token for local prototype usage.
+- Uploaded files are processed from temporary storage and removed after analysis.
