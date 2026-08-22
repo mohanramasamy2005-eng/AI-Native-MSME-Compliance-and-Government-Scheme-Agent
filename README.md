@@ -1,4 +1,4 @@
-# 🚀 MSME AI
+# 🚀 AI-Native-MSME-Compliance-Government-Scheme-Agent
 
 **AI-powered compliance, government-scheme, opportunity, and document intelligence platform for MSMEs.**
 
