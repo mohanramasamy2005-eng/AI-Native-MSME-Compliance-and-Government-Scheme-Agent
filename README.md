@@ -226,3 +226,5 @@ npm run build
 - The frontend API client falls back to local mock data when an API request is unavailable.
 - Authentication headers are supported by the frontend and routes use the authentication middleware; the middleware permits requests without a token for local prototype usage.
 - Uploaded files are processed from temporary storage and removed after analysis.
+</>
+..
