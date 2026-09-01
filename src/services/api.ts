@@ -34,7 +34,7 @@ export const api = {
   // Business Profile API
   async getBusinessProfile(): Promise<BusinessProfile> {
     try {
-      const res = await fetch(`${BASE_URL}/api/business", { headers: getAuthHeaders() });
+      const res = await fetch(`${BASE_URL}/api/business`, { headers: getAuthHeaders() });
       if (!res.ok) throw new Error("API error");
       const data = await res.json();
       return { ...initialBusinessProfile, ...data };
@@ -47,7 +47,7 @@ export const api = {
     data: Partial<BusinessProfile>,
   ): Promise<BusinessProfile> {
     try {
-      const res = await fetch(`${BASE_URL}/api/business", {
+      const res = await fetch(`${BASE_URL}/api/business`, {
         method: "PUT",
         headers: getAuthHeaders(),
         body: JSON.stringify(data),
@@ -62,7 +62,7 @@ export const api = {
   // Compliances API
   async getCompliances(): Promise<ComplianceItem[]> {
     try {
-      const res = await fetch(`${BASE_URL}/api/compliance", { headers: getAuthHeaders() });
+      const res = await fetch(`${BASE_URL}/api/compliance`, { headers: getAuthHeaders() });
       if (!res.ok) throw new Error("API error");
       const data = await res.json();
       return data.length ? data : initialComplianceList;
@@ -74,7 +74,7 @@ export const api = {
   // Schemes API
   async getSchemes(): Promise<SchemeItem[]> {
     try {
-      const res = await fetch(`${BASE_URL}/api/schemes", { headers: getAuthHeaders() });
+      const res = await fetch(`${BASE_URL}/api/schemes`, { headers: getAuthHeaders() });
       if (!res.ok) throw new Error("API error");
       const data = await res.json();
       return data.length ? data : initialSchemesList;
@@ -86,7 +86,7 @@ export const api = {
   // Tenders API
   async getTenders(): Promise<TenderItem[]> {
     try {
-      const res = await fetch(`${BASE_URL}/api/tenders", { headers: getAuthHeaders() });
+      const res = await fetch(`${BASE_URL}/api/tenders`, { headers: getAuthHeaders() });
       if (!res.ok) throw new Error("API error");
       const data = await res.json();
       return data.length ? data : initialTendersList;
@@ -98,7 +98,7 @@ export const api = {
   // Certifications API
   async getCertifications(): Promise<CertificationItem[]> {
     try {
-      const res = await fetch(`${BASE_URL}/api/certifications", {
+      const res = await fetch(`${BASE_URL}/api/certifications`, {
         headers: getAuthHeaders(),
       });
       if (!res.ok) throw new Error("API error");
@@ -112,7 +112,7 @@ export const api = {
   // Documents API
   async getDocuments(): Promise<DocumentItem[]> {
     try {
-      const res = await fetch(`${BASE_URL}/api/documents", { headers: getAuthHeaders() });
+      const res = await fetch(`${BASE_URL}/api/documents`, { headers: getAuthHeaders() });
       if (!res.ok) throw new Error("API error");
       const data = await res.json();
       return data.length ? data : initialDocumentsList;
@@ -125,7 +125,7 @@ export const api = {
     const formData = new FormData();
     formData.append("file", file);
     const token = localStorage.getItem("msme_token");
-    const res = await fetch(`${BASE_URL}/api/documents/upload", {
+    const res = await fetch(`${BASE_URL}/api/documents/upload`, {
       method: "POST",
       body: formData,
       headers: token ? { Authorization: `Bearer ${token}` } : {},
@@ -141,7 +141,7 @@ export const api = {
   // Deadlines API
   async getDeadlines(): Promise<DeadlineItem[]> {
     try {
-      const res = await fetch(`${BASE_URL}/api/deadlines", { headers: getAuthHeaders() });
+      const res = await fetch(`${BASE_URL}/api/deadlines`, { headers: getAuthHeaders() });
       if (!res.ok) throw new Error("API error");
       const data = await res.json();
       return data.length ? data : initialDeadlinesList;
@@ -153,7 +153,7 @@ export const api = {
   // Action Items API
   async getActionItems(): Promise<ActionItem[]> {
     try {
-      const res = await fetch(`${BASE_URL}/api/actions", { headers: getAuthHeaders() });
+      const res = await fetch(`${BASE_URL}/api/actions`, { headers: getAuthHeaders() });
       if (!res.ok) throw new Error("API error");
       const data = await res.json();
       return data.length ? data : initialActionItems;
@@ -179,7 +179,7 @@ export const api = {
   // AI Assistant API
   async sendAssistantMessage(message: string): Promise<StructuredAiResponse> {
     try {
-      const res = await fetch(`${BASE_URL}/api/assistant/chat", {
+      const res = await fetch(`${BASE_URL}/api/assistant/chat`, {
         method: "POST",
         headers: getAuthHeaders(),
         body: JSON.stringify({ message }),
